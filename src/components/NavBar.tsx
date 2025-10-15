@@ -11,9 +11,9 @@ export default function NavBar() {
     <AppBar position="static">
       <Toolbar>
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
-          Matchmaking App
+          Connect Now
         </Typography>
-        {user && (
+        {/* {user && ( */}
           <Box sx={{ display: "flex", gap: 2 }}>
             <Button color="inherit" component={Link} href="/dashboard">
               Dashboard
@@ -28,7 +28,7 @@ export default function NavBar() {
               Settings
             </Button>
           </Box>
-        )}
+        {/* )} */}
       </Toolbar>
     </AppBar>
   );

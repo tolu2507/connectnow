@@ -9,6 +9,7 @@ export default async function Dashboard() {
   const {
     data: { user },
   } = await supabase.auth.getUser();
+  console.log({ user });
   if (!user) redirect("/auth/login");
 
   const { data: userType } = await supabase
@@ -16,7 +17,7 @@ export default async function Dashboard() {
     .select("type")
     .eq("user_id", user.id)
     .single();
-
+  console.log({ userType });
   if (!userType) redirect("/auth/login");
 
   const isPerson = userType.type === "person";
