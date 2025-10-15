@@ -2,13 +2,7 @@
 // src/components/ProfileCard.tsx
 "use client";
 import TinderCard from "react-tinder-card";
-import {
-  Card,
-  CardContent,
-  Typography,
-  CardMedia,
-  Button,
-} from "@mui/material";
+import { Card, CardContent, Typography, CardMedia } from "@mui/material";
 
 type ProfileCardProps = {
   profile: any;
@@ -27,7 +21,9 @@ export default function ProfileCard({
 
   return (
     <TinderCard
-      onSwipe={handleSwipe}
+      onSwipe={
+        handleSwipe as (direction: "left" | "right" | "up" | "down") => void
+      }
       preventSwipe={["up", "down"]}
       swipeRequirementType="position"
       swipeThreshold={100}>
